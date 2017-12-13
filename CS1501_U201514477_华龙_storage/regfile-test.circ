@@ -3,7 +3,40 @@
 This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
 <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="facing" val="north"/>
+      <a name="facing" val="west"/>
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="0"/>
+      <a name="bit9" val="0"/>
+      <a name="bit10" val="0"/>
+      <a name="bit11" val="0"/>
+      <a name="bit12" val="0"/>
+      <a name="bit13" val="0"/>
+      <a name="bit14" val="0"/>
+      <a name="bit15" val="0"/>
+      <a name="bit16" val="1"/>
+      <a name="bit17" val="1"/>
+      <a name="bit18" val="1"/>
+      <a name="bit19" val="1"/>
+      <a name="bit20" val="1"/>
+      <a name="bit21" val="1"/>
+      <a name="bit22" val="1"/>
+      <a name="bit23" val="1"/>
+      <a name="bit24" val="1"/>
+      <a name="bit25" val="1"/>
+      <a name="bit26" val="1"/>
+      <a name="bit27" val="1"/>
+      <a name="bit28" val="1"/>
+      <a name="bit29" val="1"/>
+      <a name="bit30" val="1"/>
+      <a name="bit31" val="1"/>
     </tool>
     <tool name="Pin">
       <a name="facing" val="north"/>
@@ -13,7 +46,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="radix" val="10signed"/>
     </tool>
     <tool name="Tunnel">
+      <a name="facing" val="east"/>
       <a name="width" val="32"/>
+      <a name="label" val="Din0"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -28,10 +63,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2">
     <tool name="Multiplexer">
+      <a name="select" val="2"/>
       <a name="width" val="32"/>
     </tool>
     <tool name="Demultiplexer">
-      <a name="select" val="5"/>
+      <a name="select" val="2"/>
+      <a name="width" val="8"/>
     </tool>
   </lib>
   <lib desc="#Arithmetic" name="3"/>
@@ -45,7 +82,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
 </a>
     </tool>
   </lib>
-  <lib desc="#I/O" name="5"/>
+  <lib desc="#I/O" name="5">
+    <tool name="Button">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
   <lib desc="#Base" name="6">
     <tool name="Text Tool">
       <a name="text" val=""/>
@@ -54,7 +95,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#storage.circ" name="7"/>
+  <lib desc="file#CS1501_U201514477_华龙_storage.circ" name="7"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -94,6 +135,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <wire from="(70,250)" to="(70,260)"/>
+    <wire from="(60,240)" to="(60,250)"/>
     <wire from="(550,200)" to="(610,200)"/>
     <wire from="(480,240)" to="(480,250)"/>
     <wire from="(410,230)" to="(410,250)"/>
@@ -145,21 +188,84 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(250,220)" to="(260,220)"/>
     <wire from="(90,220)" to="(100,220)"/>
     <wire from="(100,330)" to="(110,330)"/>
+    <wire from="(60,250)" to="(70,250)"/>
     <wire from="(20,100)" to="(20,220)"/>
     <wire from="(610,100)" to="(610,150)"/>
     <wire from="(300,270)" to="(500,270)"/>
     <wire from="(430,150)" to="(500,150)"/>
     <wire from="(410,250)" to="(480,250)"/>
-    <comp lib="0" loc="(90,130)" name="Constant">
-      <a name="width" val="8"/>
-    </comp>
-    <comp lib="0" loc="(270,160)" name="Tunnel">
+    <comp lib="0" loc="(340,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
       <a name="width" val="32"/>
-      <a name="label" val="WriteData"/>
+      <a name="label" val="Reg 0 Value"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(610,290)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Read Data 2"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(417,300)" name="Text">
+      <a name="text" val="你的寄存器文件封装正好合适放在这里"/>
+    </comp>
+    <comp lib="0" loc="(520,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Reg 2 Value"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="4" loc="(70,220)" name="Register"/>
+    <comp lib="4" loc="(250,220)" name="ROM">
+      <a name="dataWidth" val="32"/>
+      <a name="contents">addr/data: 8 32
+1 2 3 4 5 66666666 77777777 88888888
+99999999 10101010 11111111 12121212 13131313
+</a>
     </comp>
     <comp lib="0" loc="(450,430)" name="Clock">
       <a name="facing" val="north"/>
     </comp>
+    <comp lib="0" loc="(180,80)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="test #"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(30,230)" name="Constant"/>
+    <comp lib="3" loc="(140,140)" name="Adder"/>
+    <comp lib="0" loc="(430,100)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Reg 1 Value"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="4" loc="(250,330)" name="ROM">
+      <a name="dataWidth" val="16"/>
+      <a name="contents">addr/data: 8 16
+8420 8842 8c23 8345 4645 465 56 422
+2
+</a>
+    </comp>
+    <comp lib="0" loc="(610,200)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Read Data 1"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="5" loc="(70,260)" name="Button">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(160,380)" name="Constant">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="7" loc="(550,210)" name="◇MIPS Regfile"/>
     <comp lib="0" loc="(280,230)" name="Splitter">
       <a name="fanout" val="4"/>
       <a name="incoming" val="16"/>
@@ -179,27 +285,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit14" val="2"/>
       <a name="bit15" val="3"/>
     </comp>
-    <comp lib="0" loc="(30,230)" name="Constant"/>
-    <comp lib="0" loc="(180,80)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="test #"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="7" loc="(550,210)" name="◇MIPS Regfile"/>
-    <comp lib="0" loc="(160,380)" name="Constant">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="6" loc="(378,477)" name="Text">
-      <a name="text" val="图中不应该有蓝色或红色线缆，也不应该出现未知状态 x."/>
-    </comp>
-    <comp lib="0" loc="(610,290)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
+    <comp lib="0" loc="(270,160)" name="Tunnel">
       <a name="width" val="32"/>
-      <a name="label" val="Read Data 2"/>
-      <a name="labelloc" val="east"/>
+      <a name="label" val="WriteData"/>
     </comp>
     <comp lib="0" loc="(610,100)" name="Pin">
       <a name="facing" val="south"/>
@@ -208,55 +296,16 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Reg 3 Value"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="4" loc="(250,330)" name="ROM">
-      <a name="dataWidth" val="16"/>
-      <a name="contents">addr/data: 8 16
-0
-</a>
-    </comp>
-    <comp lib="0" loc="(610,200)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Read Data 1"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="3" loc="(140,140)" name="Adder"/>
     <comp lib="0" loc="(390,230)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="32"/>
       <a name="label" val="WriteData"/>
     </comp>
-    <comp lib="0" loc="(340,100)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Reg 0 Value"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="6" loc="(378,477)" name="Text">
+      <a name="text" val="图中不应该有蓝色或红色线缆，也不应该出现未知状态 x."/>
     </comp>
-    <comp lib="0" loc="(520,100)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Reg 2 Value"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="4" loc="(70,220)" name="Register"/>
-    <comp lib="4" loc="(250,220)" name="ROM">
-      <a name="dataWidth" val="32"/>
-      <a name="contents">addr/data: 8 32
-0
-</a>
-    </comp>
-    <comp lib="6" loc="(417,300)" name="Text">
-      <a name="text" val="你的寄存器文件封装正好合适放在这里"/>
-    </comp>
-    <comp lib="0" loc="(430,100)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Reg 1 Value"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="0" loc="(90,130)" name="Constant">
+      <a name="width" val="8"/>
     </comp>
   </circuit>
 </project>
